@@ -34,8 +34,8 @@ npm run dev
 ## 📸 Vista Previa   
 ![alt text](image.png)
   
-![Vista previa 1](ruta-de-tu-imagen-1.jpg)  
-![Vista previa 2](ruta-de-tu-imagen-2.jpg)  
+![image](https://github.com/user-attachments/assets/1bc47194-c565-4191-9838-c7d4dad1fd86)
+
 
 ---
 
