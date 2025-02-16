@@ -1,0 +1,46 @@
+/* src/styles/message.css */
+
+.message-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Aumentamos el espacio entre las tarjetas */
+    margin-top: 40px; /* Ajustamos el margen superior */
+  }
+  
+  .message-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    width: calc(30% - 60px);
+    min-width: 250px;
+    min-height: 200px; /* Cambié max-height por min-height para que crezca según el contenido */
+    max-height: none; /* Elimina la restricción de altura */
+    overflow: visible; /* Permite que el contenido se muestre completamente */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  
+  .message-card:hover {
+    transform: translateY(-15px); /* Aumentamos el efecto de hover */
+  }
+  
+  .message-title {
+    font-size: 20px; /* Aumentamos el tamaño del título */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px; /* Ajustamos el margen inferior */
+  }
+  
+  .message-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #d8d7e5;
+    text-align: center;
+    white-space: normal; /* Asegura que el texto se ajuste en varias líneas */
+  }
+  

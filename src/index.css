@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-image: url('./assets/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100dvw;
+  overflow-x: hidden;
+}
+
+@import './romantic.css';
+
+.shadow-svg {
+  filter: drop-shadow(4px 6px 8px rgba(0, 0, 0, 0.2));
+}
+
+.slick-slider .slick-dots li button:before {
+  font-size: 8px !important;
+  color: gray !important; 
+  opacity: 0.5 !important; 
+}
+
+.slick-slider .slick-dots li.slick-active button:before {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+:root {
+  --base: #5E5690;
+  --base-light: #7873A7;
+  --base-dark: #555184;
+  --shadow: #4F4C6B;
+  --letter: #d8d7e5;
+}
+
+.letter-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.content {
+  position: relative;
+  perspective: 1000px;
+}
+
+
+.shadow {
+  position: absolute;
+  width: 200px;
+  height: 1px;
+  background: transparent;
+  border-radius: 30%;
+  box-shadow: 50px 100px 10px 5px #eeeef3;
+}
+
+.letter {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: 4px;
+  background: var(--letter);
+  box-shadow: 0px 1px 7px -2px var(--base);
+  transition: transform 0.5s ease-in-out, z-index 0s 0.5s;
+}
+
+.letter.open {
+  transform: translateX(-50%) translateY(-160px);
+  z-index: 50;
+}
+
+.letter .body {
+  position: relative;
+  width: 320px;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--base);
+  font-size: 14px;
+  text-align: center;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.letter .body .message {
+  font-size: 12px; /* Se redujo un poco el tamaño del texto */
+  font-weight: 500;
+  text-align: justify;
+  padding: 10px;
+  line-height: 1.2; /* Mejor separación entre líneas */
+}
+
+
+.letter .body .close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.envelope {
+  position: relative;
+  width: 350px;
+  height: 220px;
+  background: linear-gradient(#cccbd7 0.5px, var(--base-light) 0.5px);
+  cursor: pointer;
+  z-index: 20;
+}
+
+.envelope::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  border-top: 140px solid #7873A7;
+  border-left: 175px solid transparent;
+  border-right: 175px solid transparent;
+  box-sizing: border-box;
+  z-index: 25;
+  transform-origin: top;
+  transition: transform 0.5s ease-in-out;
+}
+
+.envelope.open::before {
+  transform: rotateX(180deg);
+}
+
+.envelope::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 350px;
+  height: 220px;
+  z-index: 25;
+  background:
+    linear-gradient(30deg, var(--base-dark) 47%, var(--shadow) 50%, var(--base) 50%) 175px 110px / 175px 110px no-repeat,
+    linear-gradient(31deg, var(--base) 49%, var(--shadow) 50%, transparent 50%) 0px 0px / 177px 110px no-repeat,
+    linear-gradient(150deg, var(--base) 50%, var(--shadow) 50%, var(--base-dark) 53%) 0px 110px / 176px 110px no-repeat,
+    linear-gradient(148.7deg, transparent 50%, var(--shadow) 50%, var(--base) 51%) 175px 0px / 175px 110px no-repeat;
+}
